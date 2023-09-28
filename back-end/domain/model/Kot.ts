@@ -1,6 +1,6 @@
 import { Huurder } from "./Huurder";
 
-class Kot {
+export class Kot {
     id: number;
     huurder: Huurder;
     verhuurder: string;

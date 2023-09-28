@@ -1,4 +1,4 @@
-class Verhuurder {
+export class Verhuurder {
     id: number;
     naam: string;
     achternaam: string;
