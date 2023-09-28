@@ -1,6 +1,8 @@
+import { Huurder } from "./Huurder";
+
 class Kot {
     id: number;
-    huurder: string;
+    huurder: Huurder;
     verhuurder: string;
     actief: boolean;
     oppervlakte: number;
@@ -9,7 +11,7 @@ class Kot {
 
     constructor(kot: {
         id: number;
-        huurder: string;
+        huurder: Huurder;
         verhuurder: string;
         actief: boolean;
         oppervlakte: number;
