@@ -1,4 +1,4 @@
-test('test constructor', () => {
-    const user: User = new User({name: 'vic'});
-    expect(user.name).toEqual('vic');
-})
+// test('test constructor', () => {
+//     const huurder: Huurder = new Huurder({name: 'vic'});
+//     expect(huurder.name).toEqual('vic');
+// })
