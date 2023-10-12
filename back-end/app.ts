@@ -16,6 +16,21 @@ app.get('/status', (req, res) => {
     res.json({ message: 'Back-end is running...' });
 });
 
+const swaggerOpts = express {
+    definition: {
+        openapi: "3.0.0",
+        info: {
+            title: "Huurders API",
+            version: "1.0.0",
+        },
+    },
+    apis: ["./back-end/controller/*.routes.ts"],
+};
+
 app.listen(port || 3000, () => {
     console.log(`Back-end is running on port ${port}.`);
 });
+
+
+
+
