@@ -1,38 +1,34 @@
-import HuurderDataAccess from '../domain/data-access/Huurder.db';
+import HuurderDb from '../domain/data-access/Huurder.db';
 import { Huurder } from '../domain/model/Huurder';
+import { HuurderInput } from '../types';
 
-export class HuurderService {
-    private dataAccess: HuurderDataAccess;
+const createHuurder = ({
+    naam,
+    id,
+    voorNaam,
+    password,
+    email,
+    straat,
+    postcode,
+    telefoon,
+}: //Weeral destructuren
+HuurderInput): Huurder => {
+    //const verhuurder = verhuurderDB.getHuurderById({ id: huurderInput.id }); --> PIECK zijn notaties, wij moeten da wss ook nog toepassen neem ik aan maar dan met kot en verhuurder
+    //const kot = kotDB.getKotById({ id: kotInput.id });
+    const huurder = new Huurder({
+        //Nieuwe huurder aanmaken
+        naam,
+        id,
+        voorNaam,
+        password,
+        email,
+        straat,
+        postcode,
+        telefoon,
+        //verhuurder: verhuurderInput,
+        //kot: kotInput,
+    });
+    return HuurderDb.createHuurder(huurder);
+};
 
-    constructor() {
-        this.dataAccess = new HuurderDataAccess();
-    }
-
-    addHuurder(huurder: Huurder): void {
-        this.dataAccess.addHuurder(huurder);
-    }
-
-    getHuurderById(id: number): Huurder | undefined {
-        return this.dataAccess.getHuurderById(id);
-    }
-
-    getAllHuurders(): Huurder[] {
-        return this.dataAccess.getAllHuurders();
-    }
-
-    updateHuurder(updatedHuurder: Huurder): void {
-        const existingHuurder = this.dataAccess.getHuurderById(updatedHuurder.id);
-        if (!existingHuurder) {
-            throw new Error('Huurder not found');
-        }
-        this.dataAccess.updateHuurder(updatedHuurder);
-    }
-
-    deleteHuurderById(id: number): void {
-        const existingHuurder = this.dataAccess.getHuurderById(id);
-        if (!existingHuurder) {
-            throw new Error('Huurder not found');
-        }
-        this.dataAccess.deleteHuurderById(id);
-    }
-}
+export default { createHuurder };

@@ -1,36 +1,48 @@
-
 import { Huurder } from '../model/Huurder';
 
-class HuurderDataAccess {
-  private huurders: Huurder[] = [];
+const huurders = []; //database is voor later
 
-  constructor() {
-    // hier is data denk ik
-  }
+const createHuurder = ({
+    naam,
+    id,
+    voorNaam,
+    password,
+    email,
+    straat,
+    postcode,
+    telefoon,
+}: Huurder): Huurder => {
+    //heeft aantal voordelen om te destructuren
+    const huurder = new Huurder({
+        //naam: naam, - Moet niet altijd daar is een short versie voor:
+        naam,
+        id,
+        voorNaam,
+        password,
+        email,
+        straat,
+        postcode,
+        telefoon,
+    });
+    huurders.push(huurder); //Als een huurder binnekomt willen we die toevoegen aan onze huurders array
+    return null;
+};
 
-  addHuurder(huurder: Huurder): void {
-    this.huurders.push(huurder);
-  }
+const getHuurderByKotAndVerhuurder = ({
+    //LATER GAAN WE DEZE BLIJKBAAR NODIG HEBBEN VOLGENS LABO
+    kotId,
+    verhuurderId,
+}: {
+    kotId: number;
+    verhuurderId: number;
+}): Huurder | null => {
+    return null;
+};
 
-  getHuurderById(id: number): Huurder | undefined {
-    return this.huurders.find((huurder) => huurder.id === id);
-  }
+const getAllHuurders = (): Huurder[] => huurders;
 
-  getAllHuurders(): Huurder[] {
-    return this.huurders;
-  }
-
-  updateHuurder(updatedHuurder: Huurder): void {
-    const index = this.huurders.findIndex((huurder) => huurder.id === updatedHuurder.id);
-
-    if (index !== -1) {
-      this.huurders[index] = updatedHuurder;
-    }
-  }
-
-  deleteHuurderById(id: number): void {
-    this.huurders = this.huurders.filter((huurder) => huurder.id !== id);
-  }
-}
-
-export default HuurderDataAccess;
+export default {
+    createHuurder,
+    getHuurderByKotAndVerhuurder,
+    getAllHuurders,
+};
