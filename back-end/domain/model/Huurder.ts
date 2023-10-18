@@ -29,11 +29,7 @@ export class Huurder {
         this.telefoon = huurder.telefoon;
     }
 
-    //addHuurderToKot(huurder: Huurder) { - ZOIETS MOETEN WE OOK NOG IMPLEMENTEREN MAAR NI HIER VGM
-    //   this.huurders.push(huurder);
-    //}
-
-    equals(naam, id, voorNaam, password, email, straat, postcode, telefoon): boolean {
+    equals({ naam, id, voorNaam, password, email, straat, postcode, telefoon }): boolean {
         return (
             this.naam === naam &&
             this.id === id &&

@@ -1,32 +1,30 @@
-import VerhuurderDataAccess from '../domain/data-access/Verhuurder.db';
+import VerhuurderDb from '../domain/data-access/Verhuurder.db';
 import { Verhuurder } from '../domain/model/Verhuurder';
+import { VerhuurderInput } from '../types';
 
-class VerhuurderService {
-    private dataAccess: VerhuurderDataAccess;
+const createVerhuurder = ({
+    id,
+    naam,
+    achternaam,
+    login,
+    pass,
+    iban,
+    tel,
+    email,
+}: //Weeral destructuren
+VerhuurderInput): Verhuurder => {
+    const verhuurder = new Verhuurder({
+        //Nieuwe verhuurder aanmaken
+        id,
+        naam,
+        achternaam,
+        login,
+        pass,
+        iban,
+        tel,
+        email,
+    });
+    return VerhuurderDb.createVerhuurder(verhuurder);
+};
 
-    constructor() {
-        this.dataAccess = new VerhuurderDataAccess();
-    }
-
-    addVerhuurder(verhuurder: Verhuurder): void {
-        this.dataAccess.addVerhuurder(verhuurder);
-    }
-
-    getVerhuurderById(id: number): Verhuurder | undefined {
-        return this.dataAccess.getVerhuurderById(id);
-    }
-
-    getAllVerhuurders(): Verhuurder[] {
-        return this.dataAccess.getAllVerhuurders();
-    }
-
-    updateVerhuurder(updatedVerhuurder: Verhuurder): void {
-        this.dataAccess.updateVerhuurder(updatedVerhuurder);
-    }
-
-    deleteVerhuurderById(id: number): void {
-        this.dataAccess.deleteVerhuurderById(id);
-    }
-}
-
-export default VerhuurderService;
+export default { createVerhuurder };

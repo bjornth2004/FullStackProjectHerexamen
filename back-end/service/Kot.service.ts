@@ -1,32 +1,34 @@
-import KotDataAccess from '../domain/data-access/Kot.db';
+import HuurderDb from '../domain/data-access/Huurder.db';
+import KotDb from '../domain/data-access/Kot.db';
+import VerhuurderDb from '../domain/data-access/Verhuurder.db';
 import { Kot } from '../domain/model/Kot';
+import { KotInput } from '../types';
 
-class KotService {
-    private dataAccess: KotDataAccess;
+const createKot = ({
+    id,
+    huurder,
+    verhuurder,
+    actief,
+    oppervlakte,
+    locatie,
+    verhuurprijs,
+}: KotInput): Kot => {
+    //huurder en verhuurder ophalen
+    const verhuurderEntity = VerhuurderDb.getVerhuurderById(verhuurder[0].id);
+    const huurderEntity = HuurderDb.getHuurderById(huurder[0].id);
 
-    constructor() {
-        this.dataAccess = new KotDataAccess();
-    }
+    const kot = new Kot({
+        //nieuw kot aanmaken
+        id,
+        huurder: [huurderEntity], // assuming you want to initialize with the retrieved huurder
+        verhuurder: [verhuurderEntity], // assuming you want to initialize with the retrieved verhuurder
+        actief,
+        oppervlakte,
+        locatie,
+        verhuurprijs,
+    });
 
-    addKot(kot: Kot): void {
-        this.dataAccess.addKot(kot);
-    }
+    return KotDb.createKot(kot);
+};
 
-    getKotById(id: number): Kot | undefined {
-        return this.dataAccess.getKotById(id);
-    }
-
-    getAllKots(): Kot[] {
-        return this.dataAccess.getAllKots();
-    }
-
-    updateKot(updatedKot: Kot): void {
-        this.dataAccess.updateKot(updatedKot);
-    }
-
-    deleteKotById(id: number): void {
-        this.dataAccess.deleteKotById(id);
-    }
-}
-
-export default KotService;
+export default { createKot };

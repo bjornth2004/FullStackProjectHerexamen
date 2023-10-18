@@ -13,8 +13,6 @@ const createHuurder = ({
     telefoon,
 }: //Weeral destructuren
 HuurderInput): Huurder => {
-    //const verhuurder = verhuurderDB.getHuurderById({ id: huurderInput.id }); --> PIECK zijn notaties, wij moeten da wss ook nog toepassen neem ik aan maar dan met kot en verhuurder
-    //const kot = kotDB.getKotById({ id: kotInput.id });
     const huurder = new Huurder({
         //Nieuwe huurder aanmaken
         naam,
@@ -25,8 +23,6 @@ HuurderInput): Huurder => {
         straat,
         postcode,
         telefoon,
-        //verhuurder: verhuurderInput,
-        //kot: kotInput,
     });
     return HuurderDb.createHuurder(huurder);
 };

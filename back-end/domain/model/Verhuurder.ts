@@ -1,12 +1,12 @@
 export class Verhuurder {
-    id: number;
-    naam: string;
-    achternaam: string;
-    login: boolean;
-    pass: number;
-    iban: string;
-    tel: number;
-    email: string;
+    readonly id: number;
+    readonly naam: string;
+    readonly achternaam: string;
+    readonly login: boolean;
+    readonly pass: number;
+    readonly iban: string;
+    readonly tel: number;
+    readonly email: string;
 
     constructor(verhuurder: {
         id: number;
@@ -28,8 +28,16 @@ export class Verhuurder {
         this.email = verhuurder.email;
     }
 
-    equals(otherVerhuurder: Verhuurder): boolean {
-        return this.id == otherVerhuurder.id;
+    equals({ id, naam, achternaam, login, pass, iban, tel, email }): boolean {
+        return (
+            this.id == id &&
+            this.naam == naam &&
+            this.achternaam == achternaam &&
+            this.login == login &&
+            this.pass == pass &&
+            this.iban == iban &&
+            this.tel == tel &&
+            this.email == email
+        );
     }
 }
-  

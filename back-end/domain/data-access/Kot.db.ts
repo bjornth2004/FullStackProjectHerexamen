@@ -1,35 +1,38 @@
 import { Kot } from '../model/Kot';
 
-class KotDataAccess {
-    private kot: Kot[] = [];
+const koten = []; //database is voor later
 
-    constructor() {
-        // hier is data denk ik
-    }
+const createKot = ({ id, actief, oppervlakte, locatie, verhuurprijs }: Kot): Kot => {
+    //heeft aantal voordelen om te destructuren
+    const kot = new Kot({
+        //naam: naam, - Moet niet altijd daar is een short versie voor:
+        id,
+        huurder: [],
+        verhuurder: [],
+        actief,
+        oppervlakte,
+        locatie,
+        verhuurprijs,
+    });
+    koten.push(kot); //Als een huurder binnekomt willen we die toevoegen aan onze huurders array
+    return kot; //
+};
 
-    addKot(kot: Kot): void {
-        this.kot.push(kot);
-    }
+const getKotByHuurderAndVerhuurder = ({
+    //LATER GAAN WE DEZE BLIJKBAAR NODIG HEBBEN VOLGENS LABO
+    huurderId,
+    verhuurderId,
+}: {
+    huurderId: number;
+    verhuurderId: number;
+}): Kot | null => {
+    return null;
+};
 
-    getKotById(id: number): Kot | undefined {
-        return this.kot.find((kot) => kot.id === id);
-    }
+const getAllKoten = (): Kot[] => koten;
 
-    getAllKots(): Kot[] {
-        return this.kot;
-    }
-
-    updateKot(updatedKot: Kot): void {
-        const index = this.kot.findIndex((kot) => kot.id === updatedKot.id);
-
-        if (index !== -1) {
-            this.kot[index] = updatedKot;
-        }
-    }
-
-    deleteKotById(id: number): void {
-        this.kot = this.kot.filter((kot) => kot.id !== id);
-    }
-}
-
-export default KotDataAccess;
+export default {
+    createKot,
+    getKotByHuurderAndVerhuurder,
+    getAllKoten,
+};
