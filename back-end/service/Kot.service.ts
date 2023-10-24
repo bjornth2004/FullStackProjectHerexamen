@@ -31,4 +31,8 @@ const createKot = ({
     return KotDb.createKot(kot);
 };
 
-export default { createKot };
+const getKoten = () => {
+    return KotDb.getAllKoten();
+};
+
+export default { createKot, getKoten };

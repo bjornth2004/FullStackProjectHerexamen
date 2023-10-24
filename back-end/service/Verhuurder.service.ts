@@ -27,4 +27,8 @@ VerhuurderInput): Verhuurder => {
     return VerhuurderDb.createVerhuurder(verhuurder);
 };
 
-export default { createVerhuurder };
+const getVerhuurders = () => {
+    return VerhuurderDb.getAllVerhuurders();
+};
+
+export default { createVerhuurder, getVerhuurders };

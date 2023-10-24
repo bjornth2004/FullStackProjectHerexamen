@@ -15,4 +15,14 @@ kotRouter.post('/', (req: Request, res: Response) => {
     }
 });
 
+kotRouter.get('/', (req: Request, res: Response) => {
+    //GET REQUEST IMPLEMENTEREN
+    try {
+        const result = kotService.getKoten();
+        res.status(200).json(result); //Als het goed gaat
+    } catch (error) {
+        res.status(400).json({ status: 'error', errorMessage: error.message }); //Als het fout gaat
+    }
+});
+
 export { kotRouter };

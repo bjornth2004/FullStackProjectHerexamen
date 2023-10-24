@@ -15,4 +15,14 @@ verhuurderRouter.post('/', (req: Request, res: Response) => {
     }
 });
 
+verhuurderRouter.get('/', (req: Request, res: Response) => {
+    //GET REQUEST IMPLEMENTEREN
+    try {
+        const result = verhuurderService.getVerhuurders();
+        res.status(200).json(result); //Als het goed gaat
+    } catch (error) {
+        res.status(400).json({ status: 'error', errorMessage: error.message }); //Als het fout gaat
+    }
+});
+
 export { verhuurderRouter };

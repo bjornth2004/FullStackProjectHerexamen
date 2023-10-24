@@ -35,10 +35,21 @@ import huurderService from '../service/Huurder.service';
 const huurderRouter = express.Router();
 
 huurderRouter.post('/', (req: Request, res: Response) => {
+    //POST REQUEST IMPLEMENTEREN
     try {
         //Try catch
         const huurder = <HuurderInput>req.body;
         const result = huurderService.createHuurder(huurder);
+        res.status(200).json(result); //Als het goed gaat
+    } catch (error) {
+        res.status(400).json({ status: 'error', errorMessage: error.message }); //Als het fout gaat
+    }
+});
+
+huurderRouter.get('/', (req: Request, res: Response) => {
+    //GET REQUEST IMPLEMENTEREN
+    try {
+        const result = huurderService.getHuurders();
         res.status(200).json(result); //Als het goed gaat
     } catch (error) {
         res.status(400).json({ status: 'error', errorMessage: error.message }); //Als het fout gaat

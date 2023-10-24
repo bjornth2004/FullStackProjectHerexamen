@@ -18,11 +18,20 @@ app.use(bodyParser.json());
 //Post request implementeren voor huurder
 app.use('/huurders', huurderRouter);
 
+//Get request implementeren voor huurder
+app.get('/huurders', huurderRouter);
+
 //Post request implementeren voor kot
 app.use('/koten', kotRouter);
 
+//Get request implementeren voor kot
+app.get('/koten', kotRouter);
+
 //Post request implementeren voor verhuurder
 app.use('/verhuurders', verhuurderRouter);
+
+//Get request implementeren voor verhuurder
+app.get('/verhuurders', verhuurderRouter);
 
 app.get('/status', (req, res) => {
     res.json({ message: 'Kot API is running.' });

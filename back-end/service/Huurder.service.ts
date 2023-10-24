@@ -27,4 +27,8 @@ HuurderInput): Huurder => {
     return HuurderDb.createHuurder(huurder);
 };
 
-export default { createHuurder };
+const getHuurders = () => {
+    return HuurderDb.getAllHuurders();
+};
+
+export default { createHuurder, getHuurders };
