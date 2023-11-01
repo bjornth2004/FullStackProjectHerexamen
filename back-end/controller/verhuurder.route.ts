@@ -46,4 +46,15 @@ verhuurderRouter.get('/', (req: Request, res: Response) => {
     }
 });
 
+verhuurderRouter.get('/:id', (req: Request, res: Response) => {
+    //GET REQUEST IMPLEMENTEREN
+    try {
+        const verhuurder = verhuurderService.getVerhuurderById(Number(req.params.id));
+        res.status(200).json(verhuurder); //Als het goed gaat
+    } catch (error) {
+        res.status(400).json({ status: 'error', errorMessage: error.message }); //Als het fout gaat
+    }
+});
+
+
 export { verhuurderRouter };

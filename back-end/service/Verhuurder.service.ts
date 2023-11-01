@@ -31,4 +31,8 @@ const getVerhuurders = () => {
     return VerhuurderDb.getAllVerhuurders();
 };
 
-export default { createVerhuurder, getVerhuurders };
+const getVerhuurderById = (id: number) => {
+    return VerhuurderDb.getVerhuurderById(id)
+}
+
+export default { createVerhuurder, getVerhuurders, getVerhuurderById };
