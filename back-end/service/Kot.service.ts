@@ -1,3 +1,4 @@
+import { id } from 'date-fns/locale';
 import HuurderDb from '../domain/data-access/Huurder.db';
 import KotDb from '../domain/data-access/Kot.db';
 import VerhuurderDb from '../domain/data-access/Verhuurder.db';
@@ -35,4 +36,8 @@ const getKoten = () => {
     return KotDb.getAllKoten();
 };
 
-export default { createKot, getKoten };
+const getKotByHuurderVerhuurderId = (listId: { huurderId: number; verhuurderId: number; }) => {
+    return KotDb.getKotByHuurderAndVerhuurder(listId)
+};
+
+export default { createKot, getKoten, getKotByHuurderVerhuurderId };

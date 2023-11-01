@@ -31,4 +31,8 @@ const getHuurders = () => {
     return HuurderDb.getAllHuurders();
 };
 
-export default { createHuurder, getHuurders };
+const getHuurderById = (id: number) => {
+    return HuurderDb.getHuurderById(id);
+}
+
+export default { createHuurder, getHuurders, getHuurderById };

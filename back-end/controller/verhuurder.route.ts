@@ -1,3 +1,24 @@
+/**
+ * @swagger
+ * components:
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
+ *   Verhuurder:
+ *     type: object
+ *     properties:
+ *       id:
+ *         type: number
+ *         format: int64
+ *       name:
+ *         type: string
+ *       email:
+ *         type: string
+ *       // Add more properties as needed
+ */
+
 import express, { Request, Response } from 'express';
 import { VerhuurderInput } from '../types';
 import verhuurderService from '../service/Verhuurder.service';
