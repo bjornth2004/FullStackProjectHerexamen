@@ -2,6 +2,7 @@ import Head from "next/head";
 import {useState, useEffect } from "react"
 import {Kot} from "@types";
 import Header from "@components"
+import KotOverviewTable from "@/components/koten/KotOverviewTable";
 import KotService from '@services/KotService'
 
 const Huurders: React.FC = () => {

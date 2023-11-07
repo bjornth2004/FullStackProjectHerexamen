@@ -1,10 +1,11 @@
 import Head from "next/head";
-// import Header from "@components/header";
 import {useState, useEffect } from "react"
 import {Huurder} from "@types";
 import Header from "@components"
 
 const Huurders: React.FC = () => {
+    const [huurders, setHuurders] = useState<Array<Huurder>>();
+    
 
     return (
         <>
@@ -15,9 +16,11 @@ const Huurders: React.FC = () => {
             <main className="d-flex flex-column justify-content-center align-items-center">
                 <h1>Huurders</h1>
                 <section>
-                    
+
                 </section>
             </main>
         </>
-    )
-}
+    );
+};
+
+export default Huurders
