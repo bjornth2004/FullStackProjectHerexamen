@@ -1,7 +1,7 @@
 import Head from "next/head";
 import {useState, useEffect } from "react"
-import {Huurder} from "@types";
-import Header from "@components"
+import {Huurder} from "@/types";
+import Header from "@/components/header"
 
 const Huurders: React.FC = () => {
     const [huurders, setHuurders] = useState<Array<Huurder>>();

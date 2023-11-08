@@ -14,7 +14,7 @@ type VerhuurderInput = {
     naam?: string;
     achternaam?: string;
     login?: boolean;
-    pass?: number;
+    pass?: string;
     iban?: string;
     tel?: number;
     email?: string;

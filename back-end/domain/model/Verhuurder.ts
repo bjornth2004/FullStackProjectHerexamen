@@ -3,7 +3,7 @@ export class Verhuurder {
     readonly naam: string;
     readonly achternaam: string;
     readonly login: boolean;
-    readonly pass: number;
+    readonly pass: string;
     readonly iban: string;
     readonly tel: number;
     readonly email: string;
@@ -13,7 +13,7 @@ export class Verhuurder {
         naam: string;
         achternaam: string;
         login: boolean;
-        pass: number;
+        pass: string;
         iban: string;
         tel: number;
         email: string;

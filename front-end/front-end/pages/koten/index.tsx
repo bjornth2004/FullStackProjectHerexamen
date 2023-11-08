@@ -1,9 +1,9 @@
 import Head from "next/head";
 import {useState, useEffect } from "react"
-import {Kot} from "@types";
-import Header from "@components"
+import {Kot} from "@/types";
+import Header from "@/components/header"
 import KotOverviewTable from "@/components/koten/KotOverviewTable";
-import KotService from '@services/KotService'
+import KotService from '@/services/KotService'
 
 const Huurders: React.FC = () => {
     const [koten, setKoten] = useState<Array<Kot>>();
@@ -29,7 +29,7 @@ const Huurders: React.FC = () => {
             </Head>
             <Header />
             <main className="d-flex flex-column justify-content-center align-items-center">
-                <h1>beschikbaare koten</h1>
+                <h1>beschikbare koten</h1>
                 <section>
                     {koten && (
                         <KotOverviewTable koten={koten}/>

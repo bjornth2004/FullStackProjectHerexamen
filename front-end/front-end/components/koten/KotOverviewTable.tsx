@@ -1,4 +1,4 @@
-import {Kot} from '@types';
+import {Kot} from '@/types';
 
 type Props = {
   koten: Array<Kot>

@@ -1,12 +1,12 @@
 export type Kot = {
     id: number;
     huurder: Huurder[];
-    verhuurder: number;
+    verhuurder: Verhuurder[];
     actief: boolean;
     oppervlakte: number;
     locatie: string;
     verhuurprijs: number;
-}
+};
 
 export type Huurder = {
     naam: string;
@@ -17,4 +17,16 @@ export type Huurder = {
     straat: string;
     postcode: string;
     telefoon: string;
-}
+};
+
+export type Verhuurder = {
+    id: number;
+    naam: string;
+    achternaam: string;
+    login: boolean;
+    pass: string;
+    iban: string;
+    tel: number;
+    email: string;
+};
+
