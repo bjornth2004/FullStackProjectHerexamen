@@ -8,18 +8,28 @@ import KotService from '@services/KotService'
 const Huurders: React.FC = () => {
     const [koten, setKoten] = useState<Array<Kot>>();
     
+const getKoten = async () => {
+    const response = await KotService.getAllKoten();
+}
+
+    useEffect(() => {
+        getKoten()
+    },
+    []
+    )
 
     return (
         <>
             <Head>
-                <title></title>
+                <title>Koten</title>
             </Head>
             <Header />
             <main className="d-flex flex-column justify-content-center align-items-center">
-                <h1>Koten</h1>
+                <h1>beschikbaare koten</h1>
                 <section>
-                    {koten && ()}
-                    <KotOverviewTable koten={koten}/>
+                    {koten && (
+                        <KotOverviewTable koten={koten}/>
+                    )}
                 </section>
             </main>
         </>
