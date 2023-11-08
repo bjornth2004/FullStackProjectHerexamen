@@ -8,9 +8,11 @@ import KotService from '@services/KotService'
 const Huurders: React.FC = () => {
     const [koten, setKoten] = useState<Array<Kot>>();
     
-const getKoten = async () => {
-    const response = await KotService.getAllKoten();
-}
+    const getKoten = async () => {
+        const response = await KotService.getAllKoten();
+        const koten = await response.json()
+        setKoten(koten)
+    }
 
     useEffect(() => {
         getKoten()
