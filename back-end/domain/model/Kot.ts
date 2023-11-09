@@ -21,7 +21,7 @@ export class Kot {
     }) {
         this.id = kot.id;
         this.huurder = kot.huurder || [];
-        this.verhuurder = kot.verhuurder || [];
+        this.verhuurder = kot.verhuurder;
         this.actief = kot.actief;
         this.oppervlakte = kot.oppervlakte;
         this.locatie = kot.locatie;

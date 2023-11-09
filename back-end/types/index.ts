@@ -26,7 +26,9 @@ type KotInput = {
     oppervlakte?: number;
     locatie?: string;
     verhuurprijs?: number;
-    huurder?: HuurderInput; // mss [] erachter zetten
+    // huurder?: HuurderInput[]; // mss [] erachter zetten
+    // verhuurder?: VerhuurderInput[];
+    huurder?:HuurderInput;
     verhuurder?: VerhuurderInput;
 };
 

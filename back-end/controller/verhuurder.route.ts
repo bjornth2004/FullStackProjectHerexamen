@@ -16,7 +16,6 @@
  *         type: string
  *       email:
  *         type: string
- *       // Add more properties as needed
  */
 
 import express, { Request, Response } from 'express';
