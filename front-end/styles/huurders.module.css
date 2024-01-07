@@ -1,0 +1,51 @@
+/* Stijl voor de container van de huurderspagina */
+.huurdersContainer {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Stijlen voor de tabel */
+.huurdersTable {
+  width: 80%; /* Aangepaste breedte naar wens */
+  border-collapse: collapse;
+  margin-top: 2rem; /* Ruimte boven de tabel */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
+  background-color: white; /* Witte achtergrond voor de tabel */
+}
+
+/* Stijl voor tabelkoppen */
+.huurdersTable th {
+  background-color: #123456; /* Donkerblauwe achtergrond zoals in de header */
+  color: white; /* Witte tekst voor contrast */
+  padding: 10px;
+  text-align: left;
+}
+
+/* Stijl voor tabelcellen */
+.huurdersTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Lichte lijn voor scheiding van rijen */
+}
+
+/* Stijl voor knoppen op de huurderspagina */
+.huurdersButton {
+  background-color: #1565c0; /* Blauwe achtergrond zoals nav links */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem; /* Ruimte boven de knop */
+}
+
+/* Hover en focus stijlen voor knoppen */
+.huurdersButton:hover,
+.huurdersButton:focus {
+  background-color: #1e88e5;
+  color: #fff;
+}

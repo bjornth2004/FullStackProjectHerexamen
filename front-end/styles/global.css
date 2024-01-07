@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mb-3;
+  }
+
+  p {
+    @apply text-base leading-relaxed mb-2;
+  }
+
+  a {
+    @apply text-blue-500 underline;
+  }
+
+  ul {
+    @apply list-disc list-inside m-4;
+  }
+
+  ol {
+    @apply list-decimal list-inside m-4;
+  }
+
+  .main {
+    @apply -mt-20 flex flex-col items-center justify-center min-h-screen;
+  }
+
+  .loginForm {
+    @apply flex flex-col w-72;
+  }
+
+  .loginForm label {
+    @apply mb-1;
+  }
+
+  .loginForm input {
+    @apply px-2.5 py-2 mb-3.5 border border-gray-300 rounded-md;
+  }
+
+  .loginButton {
+    @apply px-4 py-2.5 bg-blue-600 text-white border-0 rounded-md cursor-pointer;
+  }
+
+  .loginButton:hover {
+    @apply bg-blue-700;
+  }
+
+  .error {
+    @apply text-red-600;
+  }
+
+  .successMessage {
+    @apply text-green-600;
+  }
+
+  .logo {
+    @apply mt-4 w-[150px] h-auto justify-center text-center;
+  }
+
+  .description {
+    @apply leading-6 text-[1.2rem] text-[#666] text-center max-w-[600px] mb-4;
+  }
+
+  .header {
+    @apply py-4 flex flex-col items-center bg-[#123456] text-white;
+  }
+
+  .nav {
+    @apply w-full flex justify-center bg-[#123456] py-3;
+  }
+
+  .navLink {
+    @apply mx-6 px-8 py-2 bg-[#1565c0] rounded cursor-pointer text-white;
+  }
+
+  .navLink:hover,
+  .navLink:focus {
+    @apply bg-[#1e88e5];
+  }
+
+  .huurdersContainer {
+    @apply min-h-screen p-8 flex flex-col justify-start items-center;
+  }
+
+  .huurdersTable {
+    @apply w-4/5 border-collapse mt-8 shadow-md bg-white;
+  }
+
+  .huurdersTable th {
+    @apply bg-[#123456] text-white p-2.5 text-left;
+  }
+
+  .huurdersTable td {
+    @apply p-2.5 text-left border-b border-gray-300;
+  }
+
+  .huurdersButton {
+    @apply bg-[#1565c0] text-white py-2 px-4 border-0 rounded cursor-pointer mt-4;
+  }
+
+  .huurdersButton:hover,
+  .huurdersButton:focus {
+    @apply bg-[#1e88e5];
+  }
+}
+
+@layer components {
+  .RoleContainer {
+    @apply mt-8 w-full max-w-2xl mx-auto overflow-hidden bg-white shadow-lg rounded-lg;
+  }
+
+  .RoleContainer table {
+    @apply min-w-full leading-normal;
+  }
+
+  .RoleContainer thead {
+    @apply bg-blue-600;
+  }
+
+  .RoleContainer thead th {
+    @apply text-white p-3 font-semibold text-left text-sm uppercase tracking-wider;
+  }
+
+  .RoleContainer tbody {
+    @apply bg-white;
+  }
+
+  .RoleContainer tbody tr {
+    @apply hover:bg-gray-100;
+  }
+
+  .RoleContainer tbody td {
+    @apply p-3 text-sm text-gray-700;
+  }
+
+  .deleteButton {
+    @apply bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded;
+  }
+}

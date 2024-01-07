@@ -1,0 +1,65 @@
+/* Container voor hoofdinhoud met flexbox voor verticale uitlijning */
+.main {
+  min-height: 100vh; /* Volledige hoogte van het scherm */
+  padding: 2rem 1rem; /* Ruimte aan de boven- en onderkant, wat smaller aan de zijkanten */
+  display: flex; /* Schakel flexbox in voor deze container */
+  flex-direction: column; /* Stapel elementen verticaal */
+  justify-content: flex-start; /* Begin aan de bovenkant van de container */
+  align-items: center; /* Centreer items horizontaal */
+  background-color: #f0f4f8;
+}
+
+/* Stijl voor het logo, zorgt dat het niet te breed wordt */
+.logo {
+  margin-top: 1rem; /* Minder ruimte boven het logo */
+  width: 150px; /* Vaste breedte voor het logo */
+  height: auto; /* Hoogte automatisch aanpassen aan de breedte */
+  justify-content: center;
+  text-align: center;
+}
+
+/* Beschrijving stijling voor leesbaarheid en uitlijning */
+.description {
+  line-height: 1.2; /* Regelafstand */
+  font-size: 1.2rem; /* Grootte van de tekst */
+  color: #666;
+  text-align: center; /* Centreer de tekst */
+  max-width: 600px; /* Maximale breedte voor betere leesbaarheid */
+  margin-bottom: 1rem; /* Ruimte onder de beschrijving */
+}
+
+/* De header container met achtergrondkleur en padding */
+.header {
+  padding: 1rem 0; /* Ruimte binnen de header */
+  display: flex; /* Schakel flexbox in voor deze container */
+  flex-direction: column; /* Stapel elementen verticaal */
+  align-items: center; /* Centreer items horizontaal */
+  background-color: #123456;
+  color: white;
+}
+
+/* Nav stijl om volledige breedte te benutten en items te centreren */
+.nav {
+  width: 100%; /* Volledige breedte van de container */
+  display: flex; /* Schakel flexbox in voor deze container */
+  justify-content: center; /* Centreer items horizontaal */
+  background-color: #123456;
+  padding: 0.75rem 0; /* Ruimte binnen de nav */
+}
+
+/* Nav item stijl met padding, achtergrondkleur en afgeronde hoeken */
+.navLink {
+  margin: 0 1.5rem; /* Ruimte tussen nav items */
+  padding: 0.5rem 2rem; /* Ruimte binnen de links */
+  background-color: #1565c0;
+  border-radius: 4px; /* Afgeronde hoeken */
+  color: white;
+  cursor: pointer; /* Cursor stijl voor klikbare links */
+}
+
+/* Hover en focus stijlen voor nav items met kleurverandering */
+.navLink:hover,
+.navLink:focus {
+  background-color: #1e88e5;
+  color: #fff;
+}

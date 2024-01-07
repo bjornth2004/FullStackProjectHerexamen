@@ -1,0 +1,57 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Verhuurder {
+  id          Int     @id @default(autoincrement())
+  naam        String
+  achternaam  String
+  password    String
+  role        String
+  iban        String
+  tel         String
+  email       String  @unique 
+  koten       Kot[] // Een Verhuurder kan meerdere koten hebben
+}
+
+
+model Reactie {
+  id           Int    @id @default(autoincrement())
+  reviewtekst  String
+  score        Int
+  titel        String
+  koten        Kot[]
+}
+
+model Kot {
+  id           Int      @id @default(autoincrement())
+  actief       Boolean
+  oppervlakte  Int
+  locatie      String
+  verhuurprijs Float
+  verhuurder   Verhuurder @relation(fields: [verhuurderId], references: [id]) // Een Verhuurder kan meerdere koten hebben
+  verhuurderId Int
+  reacties Reactie[]
+  huurder      Huurder?  @relation("KotToHuurder", fields: [huurderId], references: [id])
+  huurderId    Int?      @unique
+}
+
+model Huurder {
+  id         Int     @id @default(autoincrement())
+  naam       String
+  voorNaam   String
+  password   String
+  email      String  @unique
+  straat     String
+  postcode   String
+  telefoon   String
+  kot        Kot?       @relation("KotToHuurder")
+}
